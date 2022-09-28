@@ -22,19 +22,28 @@
         }
 
         /* class selector: ten bat dau bang dau .*/
-        .hot{
+        .hot::first-letter{
             color: red;
             font-weight: bold;
+            font-size: 2em;
+            font-family: Georgia, 'Times New Roman', Times, serif;
         }
 
-        .cool{
+        .cool::first-letter{
             color: green;
             font-weight: bolder;
+            font-size: 2em;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-shadow: 2px 2px 3px gainsboro;
         }
 
         #headline{
             font-size: 2em;
             color: lightseagreen;
+            margin: 30px;
+            border: dashed medium lightseagreen;
+            padding: 20px;
+            background-color: lightcyan;
         }
 
 
@@ -47,7 +56,7 @@
     <div>
         <p class="hot">CSS Demo</p>
         <hr>
-        <p>
+        <p style="text-align: right;">
             CSS has several different units for expressing a length. <br>
             Many CSS properties take "length" values, such as width, margin, padding, font-size, etc. <br>
             Length is a number followed by a length unit, such as 10px, 2em, etc. <br>
@@ -66,7 +75,7 @@
         </p>
         <div>
             <p class="cool"> Relative Lengths </p>
-            <p>
+            <p style="text-align: center">
                 Relative length units specify a length relative to another length property. Relative length units scale
                 better between different rendering medium. <br>
                 em, ex, ch, rem, vw, vh, vmix, vmax, %
