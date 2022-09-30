@@ -1,0 +1,50 @@
+/* style thiet ke layout chung cho cac trang web */
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 10px;
+}
+
+header{
+    background-color: lightcyan;
+    padding: 10px;
+    background-image: url('/images/logo2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 80px;
+}
+header h1{
+    text-indent: 150px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+footer{
+    padding:10px;
+    border-top: solid thin brown;
+    border-bottom: double thin burlywood;
+    text-align: center;
+}
+
+nav ul{
+    list-style-type: none;
+}
+
+nav ul>li{
+    display: inline-block;
+    text-align: center;
+}
+
+li>a{
+    text-decoration: none;
+    display: inline-block;
+    width: 100px;
+    background-color: lightseagreen;
+    color: beige;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: 2s;
+    
+}
+
+li>a:hover{
+    background-color: blue;
+}
