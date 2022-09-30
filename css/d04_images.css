@@ -1,0 +1,25 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+    background-color: antiquewhite;
+    line-height: 2rem;
+}
+
+h2{
+    color: orange;
+}
+
+img.tour{
+    width: 40vw;
+    padding: 20px 20px;
+    border: thin groove gray;
+    float: left;
+    margin-right: 20px;
+}
+
+div.country{
+    clear: both;
+    margin-top: 6rem;
+}
