@@ -1,13 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>thumbnail</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+
+        #demo{
+            position: relative;
+        }
+
+        #demo ul {
+            list-style-type: none;
+            width: 300px;
+            background-color: antiquewhite;
+            
+        }
+
+        #demo span
+        {
+            position: absolute;
+            top: 0px;
+            left:400px;
+            display: none;
+        }
+
+        #demo li:hover span{
+            display: block;
+        }
+
+        #demo li{
+            display: inline-block;
+            padding: 5px;
+        }
+    </style>
 </head>
+
 <body>
     <h2>Gallery</h2>
     <hr>
+    <div id="demo">
+        <ul>
+            <li><img src="images/photo1thumb.jpg" alt=""><span><img src="images/photo1.jpg" alt=""><br>Hinh so 1</span>
+            </li>
+            <li><img src="images/photo2thumb.jpg" alt=""><span><img src="images/photo2.jpg" alt=""><br>Hinh so 2</span></li>
+            <li><img src="images/photo3thumb.jpg" alt=""><span><img src="images/photo3.jpg" alt=""><br>Hinh so 3</span></li>
+            <li><img src="images/photo4thumb.jpg" alt=""><span><img src="images/photo4.jpg" alt=""><br>Hinh so 4</span></li>
+        </ul>
+    </div>
 </body>
+
 </html>
