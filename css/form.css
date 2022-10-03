@@ -18,7 +18,9 @@ label{
     width: 100px;
 }
 
-input[type=text], input[type=password], input[type=email]
+input[type=text], input[type=password], input[type=email], 
+input[type=date], textarea,
+select
 {
     font-size: 1.1rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -26,11 +28,11 @@ input[type=text], input[type=password], input[type=email]
 }
 
 input:required:invalid{
-    background-color: gold;
+    background-color:  antiquewhite;
 }
 
 input:required:valid{
-    background-color: antiquewhite;
+    background-color: lightcyan;
 }
 
 button{

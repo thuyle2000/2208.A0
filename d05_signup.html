@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign-up</title>
+    <link rel="stylesheet" href="css/form.css">
+    <style>
+        label{
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form action="d05_login2.html">
+            <h2>Sign Up</h2>
+            <hr>
+            <div>
+                <label for="">username : </label>
+                <input type="text" name="user" id="user" required
+                        value="aptech" />
+            </div>
+
+            <div>
+                <label for="">password : </label>
+                <input type="password" name="pass" id="pass" required value="123">
+            </div>
+
+            <div>
+                <label for="">password confirm : </label>
+                <input type="password" name="pass2" id="pass2" required value="123">
+            </div>
+
+            <div>
+                <label for="">email : </label>
+                <input type="email" name="pass2" id="pass2"  value="aptech@gmail.com">
+            </div>
+
+            <div>
+                <label for="">gender : </label>
+                <input type="radio" name="gender" id="gen_male" value="male" checked> Male 
+                <input type="radio" name="gender" id="gen_female" value="female"> Female 
+            </div>
+
+            <div>
+                <label for="">languages : </label>
+                <input type="checkbox" name="lang_en" id="lang_en" value="English" checked> EN -  
+                <input type="checkbox" name="lang_fr" id="lang_fr" value="Frence"> FR -
+                <input type="checkbox" name="lang_jp" id="lang_jp" value="Japanese" checked> JP
+            </div>  
+            
+            <div>
+                <label for="">location :</label>
+                <select name="location" id="loaction" required>
+                    <option value=""> ---- Select a city --- </option>
+                    <option value="SG">Saigon</option>
+                    <option value="HN">Ha noi</option>
+                    <option value="DN">Da nang</option>
+                    <option value="HU" selected>Hue</option>
+                    <option value="CT">Can tho</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="">birthday : </label>
+                <input type="date" name="dob" id="dob" 
+                value="2004-04-21">
+            </div>
+
+            <div>
+                <label for="" style="vertical-align:top;">comment : </label>
+                <textarea name="note" id="note"  rows="3"></textarea>
+            </div>
+            <br>
+            <div style="text-align: center;">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
