@@ -25,6 +25,14 @@ input[type=text], input[type=password], input[type=email]
     width: 200px;
 }
 
+input:required:invalid{
+    background-color: gold;
+}
+
+input:required:valid{
+    background-color: antiquewhite;
+}
+
 button{
     padding: 8px 30px;
     color: antiquewhite;
