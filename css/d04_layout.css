@@ -21,6 +21,7 @@ footer{
     border-top: solid thin brown;
     border-bottom: double thin burlywood;
     text-align: center;
+    margin-top: 10px;
 }
 
 nav ul{
