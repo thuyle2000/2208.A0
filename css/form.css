@@ -1,0 +1,50 @@
+form{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.1rem;
+
+    padding: 30px 40px;
+    border: thin solid gainsboro;
+    box-shadow: 3px 3px 3px grey;
+
+    width: max-content;
+}
+
+form div{
+    margin-top: 10px;
+}
+
+label{
+    display: inline-block;
+    width: 100px;
+}
+
+input[type=text], input[type=password], input[type=email]
+{
+    font-size: 1.1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 200px;
+}
+
+button{
+    padding: 8px 30px;
+    color: antiquewhite;
+    font-weight: bold;
+    border: solid thin wheat;
+    border-radius: 10px;
+    background-color: blue;
+}
+
+button[type=reset]{
+    background-color: lightseagreen;
+}
+
+button[type=submit]{
+    background-color: red;
+}
+
+input:required{
+    border: none;
+    border-bottom: medium solid salmon;
+    border-right: thin solid lightpink;
+
+}
