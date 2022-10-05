@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+
+<body>
+    <h2>Javascript - alert(), confirm() demo</h2>
+    <hr>
+    <form action="">
+        <input type="button" value="click me -alert()" onclick="alert(`Don't touch ME !`)">
+
+        <input type="button" value="hit me -confirm()" id="btHit">
+
+        <input type="button" value="input something -prompt()" id="btInput">
+    </form>
+
+    <script>
+        //lap trinh cho su kien click vo button [hit me]
+        document.getElementById('btHit').onclick = function(){
+            var kq = confirm("Do u want to close your window ???");
+
+            console.log(kq); // in gia tri cua bien kq ra man hinh Develop cua browser
+
+            if(kq==true){
+                window.close(); // dong cua so hien tai trong browser
+            }
+        }
+
+
+        //lap trinh cho button [input something ...]
+        document.getElementById('btInput').onclick= function(){
+            var kq = prompt('enter your year of birth : ', 2004);
+            console.log(`chuoi nhap : ${kq}` );
+
+            var age = 2022 - kq;
+            alert(" You are " + age + " year-old.") 
+        }
+    </script>
+
+</body>
+
+</html>

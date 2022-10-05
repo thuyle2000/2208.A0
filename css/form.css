@@ -1,5 +1,9 @@
-form{
+*{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+form{
+
     font-size: 1.1rem;
 
     padding: 30px 40px;
@@ -35,7 +39,7 @@ input:required:valid{
     background-color: lightcyan;
 }
 
-button{
+button, input[type=button]{
     padding: 8px 30px;
     color: antiquewhite;
     font-weight: bold;
