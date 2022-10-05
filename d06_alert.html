@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <h2>Javascript - alert(), confirm() demo</h2>
+    <h2>Javascript - alert(), confirm(), prompt() and isNaN() demo</h2>
     <hr>
     <form action="">
         <input type="button" value="click me -alert()" onclick="alert(`Don't touch ME !`)">
@@ -22,24 +22,29 @@
 
     <script>
         //lap trinh cho su kien click vo button [hit me]
-        document.getElementById('btHit').onclick = function(){
+        document.getElementById('btHit').onclick = function () {
             var kq = confirm("Do u want to close your window ???");
 
             console.log(kq); // in gia tri cua bien kq ra man hinh Develop cua browser
 
-            if(kq==true){
+            if (kq == true) {
                 window.close(); // dong cua so hien tai trong browser
             }
         }
 
 
         //lap trinh cho button [input something ...]
-        document.getElementById('btInput').onclick= function(){
+        document.getElementById('btInput').onclick = function () {
             var kq = prompt('enter your year of birth : ', 2004);
-            console.log(`chuoi nhap : ${kq}` );
+            console.log(`chuoi nhap : ${kq}`);
 
-            var age = 2022 - kq;
-            alert(" You are " + age + " year-old.") 
+            if (isNaN(kq)) {
+                alert(" Wrong Data ! Try again !");
+            }
+            else {
+                var age = 2022 - kq;
+                alert(" You are " + age + " year-old.")
+            }
         }
     </script>
 
