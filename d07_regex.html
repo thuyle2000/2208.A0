@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>regex</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+
+<body>
+    <h2>Regular Expression Demo</h2>
+    <hr>
+    <form action="">
+        <div>
+            <label for="">nhap ten:</label>
+            <input type="text" name="hoten" id="hoten" required>
+            <input type="button" value="check" id="btHoten">
+            <p id="loi_ten"></p>
+        </div>
+
+    </form>
+
+    <script>
+        //lap trinh cho su kien click tren button co id [btHoten] de kiem tra o nhap ho ten co hop le ko ?
+        document.getElementById("btHoten").onclick = function(){
+            //lay du lieu nhap trong o ho ten , cat vo bien hoten
+            let hoten = document.getElementById("hoten").value.trim();
+
+            if(hoten.length<3){
+                alert("ho ten ko hop le (phai nhieu 3 ky tu), vui long nhap lai !");
+                return false;
+            }
+
+            // let r = /^[a-z A-Z]{3,}$/ ;
+            let r = /^[a-z ]{3,}$/ig 
+            if(r.test(hoten) == false){
+                alert("ho ten ko hop le (chi chua ky tu chu a-z va khoang trang), vui long nhap lai !");
+                return false;               
+            }
+
+
+        }
+    </script>
+
+</body>
+
+</html>
