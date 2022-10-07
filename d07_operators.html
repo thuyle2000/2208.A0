@@ -40,6 +40,7 @@
     </form>
 
     <script>
+
         //lap trinh cho su kien click tren nut co id='btBIT'
         document.getElementById("btBIT").onclick = function () {
             //lay gia tri cua so nhap thu 1, luu vo bien a
@@ -56,10 +57,32 @@
             let s = `<P> ${a} and ${b} = ${r1} <br>  ${a} or ${b} = ${r2} <br> ${a} xor ${b} = ${r3} </P>`
 
             //Chen chuoi s vo the <div> co id ='ketqua'
-            document.getElementById("ketqua").innerHTML=s;
+            document.getElementById("ketqua").innerHTML = s;
         }
 
-        
+
+        //lap trinh cho su kien click tren nut co id='btARI'
+        document.getElementById("btARI").onclick = function () {
+            //lay gia tri cua so nhap thu 1, luu vo bien a
+            let a = parseInt(document.getElementById("n1").value);
+
+            //lay gia tri cua so nhap thu 1, luu vo bien a
+            let b = parseInt(document.getElementById("n2").value);
+
+            //thuc hien phep toan + - * / % tren 2 bien a va b
+            let r1 = a + b;
+            let r2 = a - b;
+            let r3 = a * b;
+            let r4 = a / b;
+            let r5 = a % b;
+
+            let s = `<P> ${a} + ${b} = ${r1} <br>  ${a} - ${b} = ${r2} <br> ${a} * ${b} = ${r3} <br>  ${a} / ${b} = ${r4} <br> ${a} % ${b} = ${r5} <br></P>`
+
+            //Chen chuoi s vo the <div> co id ='ketqua'
+            document.getElementById("ketqua").innerHTML = s;
+
+        }
+
     </script>
 </body>
 
