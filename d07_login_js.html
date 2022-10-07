@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+
+    <link rel="stylesheet" href="css/form.css">
+</head>
+
+<body>
+    <h2>Javascript IF-ELSE Demo</h2>
+
+    <div>
+        <!-- action : chua ten trang web se open khi bam nut submit -->
+        <form action="d05_table2.html" id="formLOGIN">
+            <h3>Sign In</h3>
+            <div>
+                <label for="">Username: </label>
+                <input type="text" name="user" id="user" required placeholder="nhap tai khoan" autofocus>
+            </div>
+            <div>
+                <label for="">Password: </label>
+                <input type="password" name="pass" id="pass" required placeholder="nhap mat ma">
+            </div>
+
+            <div>
+                <label for="">Email: </label>
+                <input type="email" name="email" id="email" placeholder="nhap email">
+            </div>
+
+            <div>
+                <input type="checkbox" name="rem" id="rem" checked>
+                Remember Password
+            </div>
+            <br><br>
+            <div>
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // lap trinh cho su kien click nut [submit]:
+        // kiem tra tk dang nhap co hop le ko ?
+        //   TK hop le co username : aptech hoac admin, va password = 123
+        //   neu TK dang nhap ko dung => yeu cau user nhap lai.
+        document.getElementById("formLOGIN").onsubmit = function (e) {
+            //lay du lieu nhap trong o username, cat vo bien uid
+            let uid = document.getElementById("user").value.trim();
+
+            //lay du lieu nhap trong o mat khau, cat vo bien pwd
+            let pwd = document.getElementById("pass").value.trim();
+
+
+            //kiem tra username co phai la 'aptech' hoac 'admin' ko ?
+            if (uid == 'aptech' || uid == 'admin') {
+
+                //kiem tra password co phai la '123' ko ?
+                if (pwd == 123) {
+                    alert(" Congrat ! Welcome to My House !");
+                    return true;    //mo trang action [d05_table2.html]
+                }
+                else {
+                    alert(" Sorry ! Wrong Password ! Plz try again !!!");
+                    document.getElementById("pass").focus();
+                    return false;   //trinh duyet van hien thi trang login
+                }
+            }
+            else {
+                alert(" Sorry ! Wrong Username ! Plz try again !!!");
+                document.getElementById("user").focus();
+                return false;   //trinh duyet van hien thi trang login
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
