@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+    <link rel="stylesheet" href="css/form.css">
+    <style>
+        *{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+        label{
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Javascript Object Demo</h2>
+    <hr>
+
+    <div>
+        <label for="">nhap chieu rong: </label>
+        <input type="number" name="rong" id="rong" value="10">
+    </div>
+    <div>
+        <label for="">nhap chieu cao: </label>
+        <input type="number" name="cao" id="cao" value="5">
+    </div>
+    <div>
+        <input type="button" value="Tinh DT va CV" id="btDT">
+    </div>
+    <br>
+    <p id="kq"></p>
+
+    <script>
+        //lap trinh cho su kien click tren button [btDT]
+        document.getElementById("btDT").onclick= function(){
+            //lay gia tri nhap trong o chieu rong
+            let r = parseInt(document.getElementById("rong").value);
+
+            //lay gia tri nhap trong o chieu cao
+            let c = parseInt(document.getElementById("cao").value);  
+            
+            //tao 1 doi tuong hinh chu nhat
+            let rect = new Rectangle(r,c);
+            let s = ``;
+            s+= `Dien tich = ${rect.area()} <br>`;
+            s+= `Chu vi = ${rect.perimeter()}`;
+
+            document.getElementById("kq").innerHTML=s;
+        }
+
+
+        //tao kieu doi tuong hinh chu nhat
+        function Rectangle(w, h){
+            //khai bao 2 thuoc tinh chieu rong va cao
+            this.width = w;
+            this.height= h;
+
+            //khai bao phuong thuc tinh dien tich
+            this.area = function(){
+                return this.width * this.height;
+            }
+
+            //khai bao phuong thuc tinh chu vi
+            this.perimeter = function(){
+                return (this.width + this.height)*2;
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
