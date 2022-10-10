@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign-up</title>
+    <link rel="stylesheet" href="css/form.css">
+    <style>
+        label {
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <form action="d05_login2.html" onsubmit="return fn_login()">
+            <h2>Sign Up - JS Function Demo</h2>
+            <hr>
+            <div>
+                <label for="">username : </label>
+                <input type="text" name="user" id="user" required value="aptech" />
+            </div>
+
+            <div>
+                <label for="">password : </label>
+                <input type="password" name="pass" id="pass" required value="123">
+            </div>
+
+            <div>
+                <label for="">password confirm : </label>
+                <input type="password" name="pass2" id="pass2" required value="123">
+            </div>
+
+            <div>
+                <label for="">email : </label>
+                <input type="email" name="email" id="email" value="aptech@gmail.com">
+            </div>
+
+            <div>
+                <label for="">gender : </label>
+                <input type="radio" name="gender" id="gen_male" value="male" checked> Male
+                <input type="radio" name="gender" id="gen_female" value="female"> Female
+            </div>
+
+            <div>
+                <label for="">languages : </label>
+                <input type="checkbox" name="lang[]" id="lang_en" value="English" checked class="nn"> EN -
+
+                <input type="checkbox" name="lang[]" id="lang_fr" value="Frence" class="nn"> FR -
+
+                <input type="checkbox" name="lang[]" id="lang_jp" value="Japanese" checked class="nn"> JP
+            </div>
+
+            <div>
+                <label for="">location :</label>
+                <select name="location" id="location" required>
+                    <option value=""> ---- Select a city --- </option>
+                    <option value="SG">Saigon</option>
+                    <option value="HN">Ha noi</option>
+                    <option value="DN">Da nang</option>
+                    <option value="HU" selected>Hue</option>
+                    <option value="CT">Can tho</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="">birthday : </label>
+                <input type="date" name="dob" id="dob" value="2004-04-21">
+            </div>
+
+            <div>
+                <label for="" style="vertical-align:top;">comment : </label>
+                <textarea name="note" id="note" rows="3" placeholder="nhap ghi chu"></textarea>
+            </div>
+            <br>
+            <div style="text-align: center;">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+
+
+    <script>
+        //lap trinh ham xu ly du lieu nhap tren form dang ky
+        function fn_login() {
+
+            //lay du lieu nhap tren form luu vo bien mang a
+            let a = [];
+
+            //lay du lieu nhap trong o username
+            let user = document.getElementById("user").value;
+            a.push(`username : ${user}`);
+
+            //lay du lieu nhap trong o password
+            let pass1 = document.getElementById("pass").value;
+            a.push(`password : ${pass1}`);
+
+            //lay du lieu nhap trong o password confirm
+            let pass2 = document.getElementById("pass2").value;
+
+
+            //lay du lieu nhap trong o email
+            let email = document.getElementById("email").value;
+            a.push(`email: ${email}`);
+
+
+            //lay du lieu nhap trong o gender
+            let gender = document.querySelector('input[name="gender"]:checked').value;
+            a.push(`gender: ${gender}`);
+
+            //lay du lieu nhap trong checkbox languages
+            let nn = document.getElementsByName("lang[]");
+            let ngon_ngu=[];
+
+            for (const i in nn) {
+                if (nn[i].checked) {
+                    ngon_ngu.push(nn[i].value)
+                }
+            }
+            a.push(`languages: ${ngon_ngu.join()}`);
+
+            //lay du lieu nhap trong combobox location
+            let loc = document.getElementById("location").value;
+            a.push(`location: ${loc}`);
+
+            //lay du lieu nhap trong o ngay sinh
+            let dob = document.getElementById("dob").value;
+            a.push(`birthday: ${dob}`);
+
+            //lay du lieu nhap trong o ghi chu
+            let note = document.getElementById("note").value;
+            a.push(`note: ${note}`);
+
+            alert(a.join("\n"));
+            return false;
+        }
+    </script>
+</body>
+
+</html>
