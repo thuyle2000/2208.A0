@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array-method</title>
+    <link rel="stylesheet" href="css/form.css">
+    <style>
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Array Methods Demo</h2>
+    <hr>
+    <div>
+        <label for="">nhap ten sv</label>
+        <input type="text" name="tensv" id="tensv" value="khanh">
+    </div>
+    <br>
+    <div>
+        <input type="button" value="Them" id="btThem">
+        <input type="button" value="Xoa" id="btXoa">
+        <input type="button" value="Xep Thu tu" id="btSort">
+    </div>
+    <hr>
+    <div>
+        <p id="dssv"></p>
+        <p id="dssv2"></p>
+    </div>
+
+
+    <script>
+        let a = ["duy", "kha", "tai", "trung", "suong"];
+
+        //lap trinh cho su kien click button [btThem]: them 1 sv vo mang a 
+        document.getElementById("btThem").onclick = function () {
+            //lay du lieu nhap trong o [tensv] -> mang a
+            let ten = document.getElementById("tensv").value;
+
+            a.push(ten); //them phan tu vo cuoi mang, sd ham push()
+
+            //in lai ds sinh vien vo the p, co id = dssv
+            document.getElementById("dssv").innerHTML = a.join(" * ");
+        }
+
+
+        //lap trinh cho su kien click button [btXoa]: xoa 1 sv ra khoi mang a
+        document.getElementById("btXoa").onclick = function () {
+            //lay ten sv muon xoa dc nhap trong o [tensv]             
+            let ten = document.getElementById("tensv").value;
+
+            //tim phan tu trong mang
+            let i = a.indexOf(ten);
+
+            if (i == -1) {
+                alert("ko tim thay sv muon xoa")
+            }
+            else {
+                //xoa ten cua sv nay trong mang a[] tai vi tri index i: sd ham splice()
+                a.splice(i, 1);
+            }
+
+            //in lai ds sinh vien vo the p, co id = dssv
+            document.getElementById("dssv").innerHTML = a.join(" * ");
+        }
+
+        //lap trinh cho button sort
+        document.getElementById("btSort").onclick = function () {
+            a.sort();
+
+            //in lai ds sinh vien sau khi xep thu tu vo the p, co id = dssv
+            document.getElementById("dssv2").innerHTML = a.join(" * ");
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array-loop</title>
+    <style>
+        *{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h2>Array and Loops</h2>
+    <hr>
+    <script>
+        //tao mang ds[] chua 4 mua trong nam
+        let ds = ['Xuan', 'Ha', 'Thu', 'Dong'];
+
+        for (let i = 0; i < ds.length; i++) {
+            document.write(ds[i] + "<br>");
+        }
+
+        //tao mang ds2[] chua cac ngay trong tuan
+        let ds2 = new Array("mon",'tue','wed','thu','fri','sat', 'sun');
+
+        document.write("<hr>");
+        document.write("<ol>");
+        for (let i = 0; i < ds2.length; i++) {
+            document.write(`<li> ${ds2[i]} </li>`);
+        }
+        document.write("</ol>");
+        
+    </script>
+</body>
+</html>
