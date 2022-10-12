@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string</title>
+    <link rel="stylesheet" href="css/form.css">
+    <style>
+        label{
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Javascript - String demo</h2>
+    <hr>
+    <form action="">
+        <div>
+            <label for="">nhap chuoi thu 1 :</label>
+            <input type="text" name="s1" id="s1" value="FPT Aptech HCMC">
+        </div>
+        <div>
+            <label for="">nhap chuoi thu 2 :</label>
+            <input type="text" name="s2" id="s2" value="Aptech">
+        </div>
+        <div>
+            <label for="">chon file</label>
+            <input type="file" name="file" id="file">
+        </div>
+        <div>
+            <button type="button" name="btCLICK" id="btCLICK">CLICK</button>
+        </div>
+    </form>
+    <div>
+        <p id="kq1"></p>
+        <p id="kq2"></p>
+        <p id="kq3"></p>
+        <p id="kq4"></p>
+    </div>
+
+    <script>
+        document.getElementById("btCLICK").onclick = function(){
+            let s = new String();
+
+            s = document.getElementById("s1").value;
+
+            document.getElementById("kq1").innerHTML= s.toUpperCase();
+
+            document.getElementById("kq2").innerHTML= s.toLowerCase();
+
+
+            let s2 = document.getElementById("s2").value;
+
+            //kiem tra s2 co xuat hien trong s ko ?
+            if(s.indexOf(s2)>=0){
+                document.getElementById("kq3").innerHTML = `[${s2}] xuat hien trong [${s}]`
+            }
+            else{
+                document.getElementById("kq3").innerHTML = `[${s}] khong chua [${s2}]`               
+            }
+
+            //lay ten tap tin duoc chon
+            let sfile = new String();
+            sfile = document.getElementById("file").value;
+
+            //vd chuoi ten tap tin dc chon la: C:\fakepath\Template_2022_10_10.xlsx => tim vi tri dau \ tu cuoi chuoi
+            let p = sfile.lastIndexOf("\\");
+            let sname = sfile.substring(p+1);
+
+            document.getElementById("kq4").innerHTML = `Tap tin duoc chon:  ${sname}`; 
+
+        }
+    </script>
+</body>
+</html>
