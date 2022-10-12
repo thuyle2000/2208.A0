@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>date</title>
+    <link rel="stylesheet" href="css/form.css">
+    <style>
+        label{
+            width: 150px;
+        }
+        textarea{
+            width: 99%;
+        }
+    </style>
+</head>
+<body>
+    <h2>Javascript Date Demo</h2>
+    <hr>
+    <form action="">
+        <div>
+            <label for="">chon ngay sinh</label>
+            <input type="date" name="ns" id="ns" value="2003-12-28">
+        </div>
+        <div>
+            <input type="button" value="CLICK" id="btCLICK">
+        </div>
+        <div>
+            <textarea name="kq" id="kq" rows="5"></textarea>
+        </div>
+    </form>
+
+    <script>
+        //lap trinh cho su kien CLICK cua button btCLICK
+        document.getElementById("btCLICK").onclick = function(){
+            let s = [];
+            let sNS = document.getElementById("ns").value;
+            s.push(`ngay sinh: ${sNS}`);
+
+            //tao doi tuong ns kieu Date de tinh toan du lieu datetime
+            let ns = new Date(sNS);
+
+            let namSinh = ns.getFullYear(); 
+            s.push(`- nam : ${namSinh}`);
+
+            let thangSinh = ns.getMonth()+1;
+            s.push(`- thang : ${thangSinh}`);
+
+            let ngaySinh = ns.getDate();
+            s.push(`- ngay : ${ngaySinh}`);
+
+
+            //tao 1 doi tuong Date, dai dien ngay hien tai
+            let today = new Date();
+            let age = today.getFullYear() - namSinh;
+            s.push(`=> tuoi : ${age}`);
+
+            document.getElementById("kq").value = s.join("\n");
+
+        }
+    </script>
+</body>
+</html>
