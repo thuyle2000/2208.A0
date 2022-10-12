@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+
+<body>
+    <h2>Javascript location Demo</h2>
+    <hr>
+
+    <input type="button" value="Date" id="btDate">
+    <input type="button" value="Math" id="btMath">
+    <input type="button" value="String" id="btString">
+    <script>
+        //lap trinh cho su kien click tren cac button
+        document.onclick = function (e) {
+
+            //lay id cua element tao event click
+            let bID = e.srcElement.id;
+
+            let pname = "";
+            switch (bID) {
+                case "btDate":
+                    pname = "d09_Date.html"; break;
+                case "btMath":
+                    pname = "d09_math.html"; break;
+                case "btString":
+                    pname = "d09_string.html"; break;
+
+                default:
+                    alert("Ky vay ta ???");
+                    return;
+            }
+
+            location.href = pname;
+
+        }
+    </script>
+
+</body>
+
+</html>
