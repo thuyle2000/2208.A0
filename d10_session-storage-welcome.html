@@ -6,11 +6,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>welcome</title>
+    <link rel="stylesheet" href="css/form.css">
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #btOUT{
+            display: none;
+        }
+
+    </style>
 </head>
 
 <body>
-    <h2>Welcome !</h2>
+    <h2>Welcome <span id="user"></span> ! </h2>
     <hr>
+    <button type="button" id="btOUT" >Sign Out</button>
 </body>
+
+<script>
+    window.onload= function(){
+        if(sessionStorage["user"]!=null){
+            document.getElementById("user").innerHTML = `, ${sessionStorage["user"]} `;
+
+            document.getElementById("btOUT").style.display="inline";
+        }
+    }
+
+    //lap trinh cho su kien click tren button 'sisgn-out'
+    document.getElementById("btOUT").onclick=function(){
+        //1. xoa cac item user, pass trong session storage, local storage
+        sessionStorage.removeItem("user");
+        sessionStorage.removeItem("pass");
+
+        localStorage.clear();
+
+        //2. quay ve trang login (chon 1 trong 2 cach duoi)
+        history.back();
+
+        // location.href = "d10_session-storage.html";
+
+    }
+</script>
 
 </html>
