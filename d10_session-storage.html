@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>session-storage</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+    <h2>Session Storage Demo</h2>
+    <hr>
+
+    <!-- form login -->
+    <form action="d10_session-storage-welcome.html" id="form-login">
+        <h4>Sign-in</h4>
+        <div>
+            <label for="">username</label>
+            <input type="text" name="user" id="user" value="aptech" required > 
+        </div>
+
+        <div>
+            <label for="">password</label>
+            <input type="password" name="pass" id="pass" value="123" required>
+        </div>
+
+        <div>
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </div>
+    </form>
+
+    <script>
+        //lap trinh cho event submit du lieu cua form login
+        document.getElementById("form-login").onsubmit = function(e){
+            //lay du lieu nhap trong o username cua form login
+            let uid = document.getElementById("user").value;
+
+            //lay du lieu nhap trong o password cua form login
+            let pwd = document.getElementById("pass").value;
+
+            //kiem tra 
+            if(uid != "aptech"  || pwd !="123"){
+                //xuat thon bao loi
+                alert("invalid account: wrong username or password !");
+                document.getElementById("user").focus();
+                return false; // chan, ko cho chuyen trang action
+            }
+
+
+            //neu kiem tra thanh cong : luu TK dang nhap vo sessionStorage.
+            sessionStorage.setItem("user", uid);
+            sessionStorage["pass"] = pwd;
+
+            localStorage.setItem["user", uid];
+            localStorage["pass"] = uid;
+        }
+    </script>
+</body>
+</html>
